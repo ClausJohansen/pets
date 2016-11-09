@@ -8,15 +8,30 @@ namespace Pets
 {
     class Person
     {
-        public string name;
-        public int birthYear;
-        public Pet pet;
+        private string name;
+        private int birthYear;
+        private Pet pet;
 
         public Person(string name, int birthYear, Pet pet)
         {
             this.name = name;
             this.birthYear = birthYear;
             this.pet = pet;
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+
+        public int BirthYear
+        {
+            get { return birthYear; }
+        }
+
+        public Pet Pet
+        {
+            get { return pet; }
         }
     }
 }

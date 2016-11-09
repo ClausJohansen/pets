@@ -18,13 +18,12 @@ namespace Pets
 
             Person claus = new Person("Claus", 1980, myPet);
 
-            Console.WriteLine("{0} is {1}'s pet.", claus.pet.name, claus.name);
-            Console.WriteLine("{0} is a {1}.", claus.pet.name, claus.pet.species.name);
-            Console.WriteLine("{0} has {1} eyes and {2} legs.", claus.pet.name, claus.pet.species.numberOfEyes, claus.pet.species.numberOfLegs);
+            Console.WriteLine("{0} is {1}'s pet.", claus.Pet.Name, claus.Name);
+            Console.WriteLine("{0} is a {1}.", claus.Pet.Name, claus.Pet.Species.Name);
+            Console.WriteLine("{0} has {1} eyes and {2} legs.", claus.Pet.Name, claus.Pet.Species.NumberOfEyes, claus.Pet.Species.NumberOfLegs);
 
-
-            Console.WriteLine("{0} is a {1}. He \"kravler op af muren\".", notMyPet.name, notMyPet.species.name);
-            Console.WriteLine("{0} has {1} eyes and {2} legs.", notMyPet.name, notMyPet.species.numberOfEyes, notMyPet.species.numberOfLegs);
+            Console.WriteLine("{0} is a {1}. He \"kravler op af muren\".", notMyPet.Name, notMyPet.Species.Name);
+            Console.WriteLine("{0} has {1} eyes and {2} legs.", notMyPet.Name, notMyPet.Species.NumberOfEyes, notMyPet.Species.NumberOfLegs);
 
             Console.ReadKey();
         }

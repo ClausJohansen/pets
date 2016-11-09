@@ -8,13 +8,23 @@ namespace Pets
 {
     class Pet
     {
-        public Species species;
-        public string name;
+        private Species species;
+        private string name;
 
         public Pet(Species species, string name)
         {
             this.species = species;
             this.name = name;
+        }
+
+        public Species Species
+        {
+            get { return species; }
+        }
+
+        public string Name
+        {
+            get { return name; }
         }
     }
 }
