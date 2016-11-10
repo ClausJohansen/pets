@@ -40,14 +40,21 @@ namespace Pets
             // Events
 
             Person per = new Person("LillePer");
-
+            
+            per.PropertyChanged += Per_PropertyChanged;
             per.NameChanged += NameChangeEventHandler;
+
             per.Name = "StorePer";
+
             per.NameChanged -= NameChangeEventHandler;
-
-
+            per.PropertyChanged -= Per_PropertyChanged;
 
             Console.ReadKey();
+        }
+
+        private static void Per_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            Console.WriteLine("A person has changed his {0}.", e.PropertyName);
         }
 
         private static void NameChangeEventHandler(object sender, string newName)

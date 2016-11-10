@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Pets
 {
-    class Person
+    class Person : INotifyPropertyChanged
     {
         private string name;
         private int birthYear;
         private Pet pet;
 
         public event EventHandler<string> NameChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public Person(string name, int birthYear, Pet pet)
         {
@@ -45,6 +47,7 @@ namespace Pets
             {
                 name = value;
                 OnNameChanged();
+                OnPropertyChanged("Name");
             }
         }
 
@@ -75,10 +78,21 @@ namespace Pets
 
         private void OnNameChanged()
         {
-            if(NameChanged != null)
+            EventHandler<string> handler = NameChanged;
+            if(handler != null)
             {
-                NameChanged(this, this.Name);
+                handler(this, this.Name);
             } 
+        }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if(handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
+
         }
     }
 }
