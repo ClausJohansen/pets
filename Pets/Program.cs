@@ -10,6 +10,10 @@ namespace Pets
     {
         static void Main(string[] args)
         {
+            // Persons, pets and species
+
+            /*
+
             Species dog = new Species("Dog", 2, 4);
             Pet myPet = new Pet(dog, "Sinus");
             Person claus = new Person("Claus", 1980, myPet);
@@ -30,8 +34,25 @@ namespace Pets
             Person ole = new Person("Ole", "Peter", spider);
 
             Console.WriteLine("{0} has a pet {1}. The {1}'s name is {2}", ole.Name, ole.Pet.Species.Name, ole.Pet.Name);
+            */
+
+
+            // Events
+
+            Person per = new Person("LillePer");
+
+            per.NameChanged += NameChangeEventHandler;
+            per.Name = "StorePer";
+            per.NameChanged -= NameChangeEventHandler;
+
+
 
             Console.ReadKey();
+        }
+
+        private static void NameChangeEventHandler(object sender, string newName)
+        {
+            Console.WriteLine("A person has changed his name. The persons new name is {0}", newName);
         }
     }
 }
