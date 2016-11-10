@@ -12,6 +12,8 @@ namespace Pets
         private int birthYear;
         private Pet pet;
 
+        public event EventHandler<string> NameChanged;
+
         public Person(string name, int birthYear, Pet pet)
         {
             this.name = name;
@@ -39,7 +41,11 @@ namespace Pets
         public string Name
         {
             get { return name; }
-            set { name = value; }
+            set
+            {
+                name = value;
+                OnNameChanged();
+            }
         }
 
         public int BirthYear
@@ -65,6 +71,14 @@ namespace Pets
         public int GetNumberOfEyesForPet()
         {
             return pet.Species.NumberOfEyes;
+        }
+
+        private void OnNameChanged()
+        {
+            if(NameChanged != null)
+            {
+                NameChanged(this, this.Name);
+            } 
         }
     }
 }
