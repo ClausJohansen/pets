@@ -33,5 +33,20 @@ namespace Pets
         {
             get { return pet; }
         }
+
+        public string getName()
+        {
+            return name;
+        }
+
+        public int getAge()
+        {
+            return DateTime.Now.Year - BirthYear;
+        }
+
+        public int getNumberOfEyesForPet()
+        {
+            return pet.Species.NumberOfEyes;
+        }
     }
 }
