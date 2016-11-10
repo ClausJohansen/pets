@@ -19,9 +19,27 @@ namespace Pets
             this.pet = pet;
         }
 
+        public Person(string name)
+        {
+            this.name = name;
+        }
+
+        public Person(string name, Pet pet)
+        {
+            this.name = name;
+            this.pet = pet;
+        }
+
+        public Person(string name, Species species)
+        {
+            this.name = name;
+            this.pet = new Pet(species, null);
+        }
+
         public string Name
         {
             get { return name; }
+            set { name = value; }
         }
 
         public int BirthYear
