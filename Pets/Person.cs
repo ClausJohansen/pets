@@ -34,17 +34,17 @@ namespace Pets
             get { return pet; }
         }
 
-        public string getName()
+        public string GetName()
         {
             return name;
         }
 
-        public int getAge()
+        public int GetAge()
         {
             return DateTime.Now.Year - BirthYear;
         }
 
-        public int getNumberOfEyesForPet()
+        public int GetNumberOfEyesForPet()
         {
             return pet.Species.NumberOfEyes;
         }
