@@ -27,9 +27,9 @@ namespace Pets
             Console.WriteLine("{0} is {1} years old.", claus.GetName(), claus.GetAge());
             Console.WriteLine("His pet {0} has {1} eyes.", claus.Pet.Name, claus.GetNumberOfEyesForPet());
 
-            Person ole = new Person("Ole", spider);
+            Person ole = new Person("Ole", "Peter", spider);
 
-            Console.WriteLine("{0} has a pet {1}.", ole.Name, ole.Pet.Species.Name);
+            Console.WriteLine("{0} has a pet {1}. The {1}'s name is {2}", ole.Name, ole.Pet.Species.Name, ole.Pet.Name);
 
             Console.ReadKey();
         }

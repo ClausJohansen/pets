@@ -30,10 +30,10 @@ namespace Pets
             this.pet = pet;
         }
 
-        public Person(string name, Species species)
+        public Person(string name, string petName, Species petSpecies)
         {
             this.name = name;
-            this.pet = new Pet(species, null);
+            this.pet = new Pet(petSpecies, petName);
         }
 
         public string Name
