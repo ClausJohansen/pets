@@ -12,8 +12,6 @@ namespace Pets
         {
             // Persons, pets and species
 
-            /*
-
             Species dog = new Species("Dog", 2, 4);
             Pet myPet = new Pet(dog, "Sinus");
             Person claus = new Person("Claus", 1980, myPet);
@@ -34,9 +32,15 @@ namespace Pets
             Person ole = new Person("Ole", "Peter", spider);
 
             Console.WriteLine("{0} has a pet {1}. The {1}'s name is {2}", ole.Name, ole.Pet.Species.Name, ole.Pet.Name);
-            */
+            Console.WriteLine(ole.Pet.Species.Talk());
+
+            Console.ReadKey();
 
 
+
+
+            /*
+            
             // Events
 
             Person per = new Person("LillePer");
@@ -50,6 +54,7 @@ namespace Pets
             per.PropertyChanged -= Per_PropertyChanged;
 
             Console.ReadKey();
+            */
         }
 
         private static void Per_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
